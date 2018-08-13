@@ -25,9 +25,9 @@ export default class CodeEditor extends React.PureComponent<
   }
   public render() {
     return (
-      <div className="container">
+      <div className="container" style={{ maxWidth: 600 }}>
         <div style={{ marginBottom: 12 }}>
-          <div className="row">
+          <div className="row" style={{ marginBottom: 6 }}>
             <InputField
               title="Name"
               onChange={this.nameChange}

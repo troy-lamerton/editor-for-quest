@@ -2,6 +2,7 @@ import * as React from 'react';
 import './App.css';
 
 import CodeEditor from './components/code_editor';
+import Todos from './components/todos';
 
 class App extends React.Component {
   public render() {
@@ -13,10 +14,9 @@ class App extends React.Component {
             className="App-logo"
             alt="logo"
           />
-          <h1 className="App-title">-Editor</h1>
         </header>
-        <p className="App-intro">Start writing your quester below</p>
         <CodeEditor />
+        <Todos />
       </div>
     );
   }
