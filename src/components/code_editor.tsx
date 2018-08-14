@@ -45,7 +45,7 @@ export default class CodeEditor extends React.PureComponent<
           <div className="col-6">
             <PublishButton
               type="primary"
-              solverId={this.state.name.replace(/[.@%:\/\\]/g, '')}
+              solverId={this.state.name}
               data={this.state.code}
             />
           </div>

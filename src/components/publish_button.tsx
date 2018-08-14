@@ -20,7 +20,8 @@ class PublishButton extends React.PureComponent<{
 
   private publish = () => {
     const steps = yaml.parse(this.props.data);
-    const savePath = '/quests/solvers_community/' + this.props.solverId;
+    const solverIdSantized = this.props.solverId.replace(/[.@%:\/\\]/g, '');
+    const savePath = '/quests/solvers_community/' + solverIdSantized;
 
     /*tslint:disable*/
     this.props.firebase
@@ -37,6 +38,7 @@ class PublishButton extends React.PureComponent<{
         if (canContinue) {
           this.props.firebase.set(savePath, {
             steps,
+            id: solverIdSantized,
             name: this.props.solverId,
             created_at: new Date().toISOString(),
             author: 'Anonymous',
