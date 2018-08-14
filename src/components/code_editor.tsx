@@ -1,4 +1,5 @@
 import * as React from 'react';
+import sillyname from 'sillyname';
 import Button from './button';
 import InputField from './input_field';
 import PublishButton from './publish_button';
@@ -18,7 +19,7 @@ export default class CodeEditor extends React.PureComponent<
 
     this.state = {
       code: EXAMPLE_QUESTER_CODE,
-      name: "Troy's Vampire Slayer",
+      name: sillyname(),
     };
   }
   public render() {
@@ -68,11 +69,17 @@ export default class CodeEditor extends React.PureComponent<
   };
 }
 
-const EXAMPLE_QUESTER_CODE = `# Vampire slayer
+const EXAMPLE_QUESTER_CODE = `# Draynor village example
+- Walk: Draynor Village
+- Bank:
+    deposit: inventory
+    withdraw:
+      - "* rune, 2"
 - Walk: Vampire Slayer
-- Talk: Morgan, 2
 - Climb: up
-- Expect: Garlic
-  Search: Cupboard
+- Search: Cupboard
+  Expect: Garlic
 - Climb: down
-- Walk: Blue Moon Inn`;
+- Bank:
+    deposit: everything
+- Interact: Chop down on Tree`;
