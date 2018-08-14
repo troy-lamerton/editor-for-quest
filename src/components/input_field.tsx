@@ -22,8 +22,6 @@ export default class InputField extends React.PureComponent<{
   }
 
   private change = (e: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({
-      code: e.currentTarget.value,
-    });
+    this.props.onChange(e.currentTarget.value);
   };
 }

@@ -2,7 +2,6 @@ import * as React from 'react';
 import './App.css';
 
 import CodeEditor from './components/code_editor';
-import Todos from './components/todos';
 
 class App extends React.Component {
   public render() {
@@ -16,7 +15,6 @@ class App extends React.Component {
           />
         </header>
         <CodeEditor />
-        <Todos />
       </div>
     );
   }

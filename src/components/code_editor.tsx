@@ -1,10 +1,8 @@
 import * as React from 'react';
-import * as YAML from 'yamljs';
 import Button from './button';
 import InputField from './input_field';
+import PublishButton from './publish_button';
 import Textarea from './textarea';
-
-import { postData } from '../api/requests';
 
 export default class CodeEditor extends React.PureComponent<
   object,
@@ -45,13 +43,11 @@ export default class CodeEditor extends React.PureComponent<
             </Button>
           </div>
           <div className="col-6">
-            <Button
-              disabled={this.state.uploading}
+            <PublishButton
               type="primary"
-              onClick={this.uploadQuester}
-            >
-              Upload
-            </Button>
+              solverId={this.state.name.replace(/[.@%:\/\\]/g, '')}
+              data={this.state.code}
+            />
           </div>
         </div>
       </div>
@@ -63,20 +59,6 @@ export default class CodeEditor extends React.PureComponent<
   };
   private clearEditor = () => {
     this.setState({ code: '' });
-  };
-
-  private uploadQuester = () => {
-    this.setState({ uploading: true });
-    const steps = YAML.parse(this.state.code);
-    /* tslint:disable*/
-    const name = this.state.name.replace(/\./g, '');
-    postData(`/${name}`, {
-      author: 'TODO:usesmthn',
-      created_at: new Date().toISOString(),
-      steps,
-    }).then(data => {
-      this.setState({ uploadDone: true, uploading: false });
-    });
   };
 
   private change = (code: string) => {
