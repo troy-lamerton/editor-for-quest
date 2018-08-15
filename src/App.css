@@ -24,3 +24,13 @@ body {
 .App-intro {
   font-size: large;
 }
+
+/* This is the markdown element */
+article {
+  text-align: left;
+  color: black;
+  background: white;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 15px;
+}

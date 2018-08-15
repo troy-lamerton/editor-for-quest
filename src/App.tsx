@@ -1,10 +1,27 @@
 import * as React from 'react';
 import './App.css';
 
+import { getReadme } from './api/requests';
+
 import Markdown from 'react-remarkable';
 import CodeEditor from './components/code_editor';
 
-class App extends React.Component {
+interface IState {
+  readme: string;
+}
+class App extends React.Component<{}, IState> {
+  constructor() {
+    super({});
+
+    this.state = {
+      readme: '',
+    };
+  }
+  public componentDidMount() {
+    /*tslint:disable*/
+    getReadme().then((str: string) => this.setState({ readme: str }));
+    /*tslint:enable*/
+  }
   public render() {
     return (
       <div className="App">
@@ -16,10 +33,7 @@ class App extends React.Component {
           />
         </header>
         <CodeEditor />
-        <Markdown
-          source="# readme 
-          please read all"
-        />
+        <Markdown source={this.state.readme} container="article" />
       </div>
     );
   }
