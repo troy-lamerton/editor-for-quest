@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './App.css';
 
+import Markdown from 'react-remarkable';
 import CodeEditor from './components/code_editor';
 
 class App extends React.Component {
@@ -15,6 +16,10 @@ class App extends React.Component {
           />
         </header>
         <CodeEditor />
+        <Markdown
+          source="# readme 
+          please read all"
+        />
       </div>
     );
   }
