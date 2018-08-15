@@ -34,3 +34,8 @@ article {
   margin: 20px auto;
   padding: 15px;
 }
+
+pre {
+  background: #f6f8fa;
+  padding: 16px;
+}
