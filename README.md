@@ -109,6 +109,14 @@ Engages in combat with the specified Npc. Quest will always eat food in the inve
 
 Performs the action on the scene object.
 
+### Open
+
+```YAML
+- Open: Large door
+```
+
+Open a named door by doing the Open action on the scene object.
+
 ### ReturnOnDeath (Beta)
 
 ```YAML
@@ -198,11 +206,3 @@ Named locations include all of the locations in [Explv's map tool](https://explv
 ```
 
 At the moment this can only be used in the official questers. Waits for the cutscene to finish.
-
-### Open (coming soon)
-
-```YAML
-- Open: Large door
-```
-
-Open a named door by doing the Open action on the scene object.
