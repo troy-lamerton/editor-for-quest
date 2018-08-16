@@ -65,7 +65,7 @@ Searches every nearby Bookcase until you receive the specified book. Then opens 
 - Climb: down
 ```
 
-Climbs the nearest thing with an action containing "Climb" or "Walk".
+Climbs the nearest Ladder, Stair* or Trapdoor.
 
 ### Equip
 
@@ -205,4 +205,4 @@ At the moment this can only be used in the official questers. Waits for the cuts
 - Open: Large door
 ```
 
-Performs the Open action on the scene object.
+Open a named door by doing the Open action on the scene object.
