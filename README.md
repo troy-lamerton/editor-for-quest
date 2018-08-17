@@ -65,7 +65,7 @@ Searches every nearby Bookcase until you receive the specified book. Then opens 
 - Climb: down
 ```
 
-Climbs the nearest thing with an action containing "Climb" or "Walk".
+Climbs the nearest Ladder, Stair* or Trapdoor.
 
 ### Equip
 
@@ -109,6 +109,14 @@ Engages in combat with the specified Npc. Quest will always eat food in the inve
 
 Performs the action on the scene object.
 
+### Open
+
+```YAML
+- Open: Large door
+```
+
+Open a named door by doing the Open action on the scene object.
+
 ### ReturnOnDeath (Beta)
 
 ```YAML
@@ -132,6 +140,14 @@ When combined with another action, Quest will return to this step if the player 
 ```
 
 Searches the specified scene object nearby. Search can open doors to reach the target.
+
+### Take
+
+```YAML
+- Take: Oil can
+```
+
+Picks up the item off the ground
 
 ### Talk
 
@@ -198,11 +214,3 @@ Named locations include all of the locations in [Explv's map tool](https://explv
 ```
 
 At the moment this can only be used in the official questers. Waits for the cutscene to finish.
-
-### Open (coming soon)
-
-```YAML
-- Open: Large door
-```
-
-Performs the Open action on the scene object.
