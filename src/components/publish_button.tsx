@@ -19,7 +19,15 @@ class PublishButton extends React.PureComponent<{
   }
 
   private publish = () => {
-    const steps = yaml.parse(this.props.data);
+    let steps: string = '';
+    try {
+      steps = yaml.parse(this.props.data);
+    } catch (e) {
+      alert('There is a problem on line ' + e.parsedLine + '\n\n' + e.message);
+      // tslint:disable-next-line
+      console.error(e);
+      return;
+    }
     const solverIdSantized = this.props.solverId.replace(/[.@%:\/\\]/g, '');
     const savePath = '/quests/solvers_community/' + solverIdSantized;
 

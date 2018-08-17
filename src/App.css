@@ -1,5 +1,6 @@
 body {
   background: #0d3880;
+  padding: 0 20px !important;
 }
 .App {
   text-align: center;
@@ -26,13 +27,15 @@ body {
 }
 
 /* This is the markdown element */
-article {
+article,
+aside {
   text-align: left;
   color: black;
   background: white;
-  max-width: 600px;
-  margin: 20px auto;
   padding: 15px;
+}
+article {
+  margin-top: 40px;
 }
 
 pre {

@@ -11,8 +11,9 @@ export default class CodeEditor extends React.PureComponent<{
         onChange={this.change}
         style={{
           font: 'bold 18px Monaco',
-          height: 300,
+          height: 400,
           lineHeight: '21px',
+          maxHeight: 500,
         }}
         value={this.props.value}
       />

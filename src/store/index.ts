@@ -1,6 +1,8 @@
 import * as firebase from 'firebase';
 import { firebaseReducer, reactReduxFirebase } from 'react-redux-firebase';
 import { combineReducers, compose, createStore } from 'redux';
+import { IState } from '../types';
+import questReducer, { initState } from './reducer';
 // import { reduxFirestore, firestoreReducer } from 'redux-firestore' // <- needed if using firestore
 // import 'firebase/firestore' // <- needed if using firestore
 // import 'firebase/functions' // <- needed if using httpsCallable
@@ -20,9 +22,13 @@ const createStoreWithFirebase = compose(
 // Add firebase to reducers
 const rootReducer = combineReducers({
   firebase: firebaseReducer,
+  quest: questReducer,
   // firestore: firestoreReducer // <- needed if using firestore
 });
 
 // Create store with reducers and initial state
-const initialState = {};
-export default createStoreWithFirebase(rootReducer, initialState);
+const initialState = {
+  quest: initState,
+};
+
+export default createStoreWithFirebase(rootReducer, initialState as IState);

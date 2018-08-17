@@ -5,6 +5,7 @@ import { getReadme } from './api/requests';
 
 import Markdown from 'react-remarkable';
 import CodeEditor from './components/code_editor';
+import OpenToEditList from './components/open_to_edit_list';
 
 interface IState {
   readme: string;
@@ -32,7 +33,16 @@ class App extends React.Component<{}, IState> {
             alt="logo"
           />
         </header>
-        <CodeEditor />
+        <div className="container">
+          <div className="row">
+            <div className="col-3">
+              <OpenToEditList />
+            </div>
+            <div className="col-9">
+              <CodeEditor />
+            </div>
+          </div>
+        </div>
         <Markdown source={this.state.readme} container="article" />
       </div>
     );

@@ -1,12 +1,19 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import sillyname from 'sillyname';
+import * as yaml from 'yamljs';
+import { IState } from '../types';
+
 import Button from './button';
 import InputField from './input_field';
 import PublishButton from './publish_button';
 import Textarea from './textarea';
 
-export default class CodeEditor extends React.PureComponent<
-  object,
+interface IProps {
+  steps: any[];
+}
+class CodeEditor extends React.PureComponent<
+  IProps,
   {
     code: string;
     name: string;
@@ -14,17 +21,28 @@ export default class CodeEditor extends React.PureComponent<
     uploading?: boolean;
   }
 > {
-  constructor() {
-    super({});
+  constructor(props: IProps) {
+    super(props);
 
     this.state = {
       code: EXAMPLE_QUESTER_CODE,
       name: sillyname(),
     };
   }
+
+  public componentWillReceiveProps(np: IProps) {
+    if (np.steps) {
+      // tslint:disable-next-line
+      console.log();
+      this.setState({
+        code: yaml.stringify(np.steps, 3, 2).replace(/-\n  /g, '- '),
+      });
+    }
+  }
+
   public render() {
     return (
-      <div className="container" style={{ maxWidth: 600 }}>
+      <div>
         <div style={{ marginBottom: 12 }}>
           <div className="row" style={{ marginBottom: 6 }}>
             <InputField
@@ -68,6 +86,12 @@ export default class CodeEditor extends React.PureComponent<
     });
   };
 }
+
+export default connect((state: IState) => {
+  return {
+    steps: state.quest.steps,
+  };
+})(CodeEditor);
 
 const EXAMPLE_QUESTER_CODE = `# Draynor village example
 - Walk: Draynor Village
