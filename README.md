@@ -177,7 +177,7 @@ Talk can open doors to reach the Npc.
 - Use: Air rune on (3204, 5678)
 ```
 
-Uses an item on the second thing. The item must be in your inventory. The thing can be an item in your inventory, a nearby scene object or a nearby Npc. Use will NOT open doors to reach the target.
+Uses an item on the second thing. The item must be in your inventory. The thing can be an item in your inventory, a nearby scene object or a nearby Npc. Use will NOT open doors to reach the target. Expect does not work with Use but you can do Wait instead.
 
 The second thing can also be a position. Quest will use your item on the scene object at that position.
 
