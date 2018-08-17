@@ -141,6 +141,14 @@ When combined with another action, Quest will return to this step if the player 
 
 Searches the specified scene object nearby. Search can open doors to reach the target.
 
+### Take
+
+```YAML
+- Take: Oil can
+```
+
+Picks up the item off the ground
+
 ### Talk
 
 ```YAML
