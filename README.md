@@ -159,6 +159,14 @@ Picks up the item off the ground
 - Talk: King Roald, 1, 1
 ```
 
+```YAML
+- Talk: continue
+```
+
+```YAML
+- Talk: 1
+```
+
 Starts talking with the Npc, continuing the dialog until the end. If chat options are specified, they will be used when there is a choice. 1 is the first chat option.
 
 Talk can open doors to reach the Npc.
