@@ -222,3 +222,6 @@ Named locations include all of the locations in [Explv's map tool](https://explv
 ```
 
 At the moment this can only be used in the official questers. Waits for the cutscene to finish.
+
+
+If the command you need isn't here, or it doesn't allow what you need to do, check with Troy#8968 on Discord, because I haven't listed every possible command. For example, when specifying an item, you can always put an item id instead.
