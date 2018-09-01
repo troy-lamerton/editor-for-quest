@@ -6,6 +6,8 @@ When specifying a name you can include `*` at the start or end to match differen
 
 `"* crab"` will match Sand crab, Ammonite crab, etc. When using `*` you must surround the text with "quotes".
 
+Items can also be identified by their id. E.g. 995 is Coins.
+
 ### Aggrovate
 
 ```YAML
@@ -159,6 +161,14 @@ Picks up the item off the ground
 - Talk: King Roald, 1, 1
 ```
 
+```YAML
+- Talk: continue
+```
+
+```YAML
+- Talk: 1
+```
+
 Starts talking with the Npc, continuing the dialog until the end. If chat options are specified, they will be used when there is a choice. 1 is the first chat option.
 
 Talk can open doors to reach the Npc.
@@ -177,7 +187,7 @@ Talk can open doors to reach the Npc.
 - Use: Air rune on (3204, 5678)
 ```
 
-Uses an item on the second thing. The item must be in your inventory. The thing can be an item in your inventory, a nearby scene object or a nearby Npc. Use will NOT open doors to reach the target.
+Uses an item on the second thing. The item must be in your inventory. The thing can be an item in your inventory, a nearby scene object or a nearby Npc. Use will NOT open doors to reach the target. Expect does not work with Use but you can do Wait instead.
 
 The second thing can also be a position. Quest will use your item on the scene object at that position.
 
@@ -214,3 +224,6 @@ Named locations include all of the locations in [Explv's map tool](https://explv
 ```
 
 At the moment this can only be used in the official questers. Waits for the cutscene to finish.
+
+
+If the command you need isn't here, or it doesn't allow what you need to do, check with Troy#8968 on Discord, because I haven't listed every possible command.
