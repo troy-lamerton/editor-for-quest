@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "build",
+    "public": "packages/quester-editor/build",
     "ignore": [
       "firebase.json",
       "**/.*",
