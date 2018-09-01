@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Quest Editor",
+  "name": "Quest Editor - Make your own quester",
   "icons": [
     {
       "src": "favicon.ico",
