@@ -6,7 +6,7 @@ When specifying a name you can include `*` at the start or end to match differen
 
 `"* crab"` will match Sand crab, Ammonite crab, etc. When using `*` you must surround the text with "quotes".
 
-Items can also be identified by their id. E.g. 995 is Coins.
+Any item, scene object or npc can also be identified by their id. E.g. `995` is Coins.
 
 ### Aggrovate
 
@@ -14,7 +14,7 @@ Items can also be identified by their id. E.g. 995 is Coins.
 - Aggrovate: Skeleton
 ```
 
-Attacks the specified monster until the player is hit.
+Attacks the specified monster and waits for the player to be hit.
 
 ### Bank
 
@@ -37,8 +37,8 @@ Attacks the specified monster until the player is hit.
       - Fire rune, 100
 ```
 
-Walks to the nearest bank and then deposits your inventory or everything (inventory and equipment).
-Withdraws the list of items or 1 if no amount is specified.
+Walks to the nearest bank and then deposits your `inventory` or `everything` (inventory and equipment).
+Withdraws X of each item or 1 if no amount is specified.
 
 `Food` is used to withdraw any of the following items:
 
@@ -57,6 +57,15 @@ Withdraws the list of items or 1 if no amount is specified.
 
 Searches every nearby Bookcase until you receive the specified book. Then opens the book. It will not read through the pages.
 
+### Click
+
+```YAML
+- Click: Varrock teleport
+```
+
+Clicks the item in your inventory, scene object, or npc
+
+
 ### Climb
 
 ```YAML
@@ -67,7 +76,7 @@ Searches every nearby Bookcase until you receive the specified book. Then opens 
 - Climb: down
 ```
 
-Climbs the nearest Ladder, Stair* or Trapdoor.
+Climbs the nearest Ladder, "Stair*" or Trapdoor.
 
 ### Equip
 
